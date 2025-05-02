@@ -14,9 +14,10 @@ const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 function changeTextLetter(element, onComplete) {
   let iteration = 0;
   const textValue = element.dataset.textValue;
+ 
 
   clearInterval(element.interval);
-
+ 
   element.interval = setInterval(() => {
     element.innerText = textValue
       .split("")
@@ -61,15 +62,11 @@ window.onload = function () {
 
 
 
-const darkModeToggle = document.getElementById('darkModeToggle');
+
+const toggle = document.getElementById('darkModeToggle');
 const body = document.body;
 
-darkModeToggle.addEventListener('change', () => {
-  if (darkModeToggle.checked) {
-    document.body.classList.remove("light-mode");
-    document.body.classList.add("dark-mode");
-  } else {
-    document.body.classList.remove("dark-mode");
-    document.body.classList.add("light-mode");
-  }
+toggle.addEventListener('change', () => {
+    body.classList.toggle('dark-mode');
+    body.classList.toggle('light-mode');
 });
